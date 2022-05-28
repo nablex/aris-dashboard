@@ -30,6 +30,9 @@
 			},
 			"skeleton-menu-top-left.npt": {
 				"url": "templates/skeleton-menu-top-left.npt"
+			},
+			"skeleton-menu-top.npt": {
+				"url": "templates/skeleton-menu-top.npt"
 			}
 		}
 	}
