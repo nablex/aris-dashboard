@@ -1,0 +1,10 @@
+{ 
+	"category": "Skeletons",
+	"name": "Menu Left",
+	"description": "With a menu on the left",
+	"icon": "images/events/events-large.png",
+	"content": {
+		"type": "page",
+		"content": {"label":"Skeleton","rows":[{"id":1,"cells":[{"id":3,"rows":[],"alias":"page-actions","bindings":{},"name":"Menu","state":{"class":null,"actions":[],"activeClass":null,"disabledClass":null,"pastClass":null,"defaultAction":null,"useButtons":true,"autoActions":true,"clickBased":true,"leaveOpen":true},"target":"page","on":null,"class":null,"customId":null,"width":null,"height":null,"instances":{},"condition":null,"devices":[],"clickEvent":null,"aris":{"components":{"page-column":{"variant":null,"modifiers":[],"options":[]},"actions-menu":{"variant":"sidebar","modifiers":[],"options":[]}}}},{"id":4,"rows":[],"alias":null,"bindings":{},"name":"Main","state":{},"target":"page","on":null,"class":null,"customId":"main","width":null,"height":null,"instances":{},"condition":null,"devices":[],"clickEvent":null,"aris":{"components":{"page-column":{"variant":"default","modifiers":["fullscreen"],"options":["fill_normal"]}}}}],"class":null,"customId":null,"instances":{},"condition":null,"direction":null,"align":null,"on":null,"collapsed":false,"name":"Page Layout","aris":{"components":{"page-row":{"variant":"default","modifiers":[],"options":[]}}}}],"path":null,"counter":5,"variables":[],"query":[],"actions":[],"class":null,"initial":false,"menuX":0,"menuY":0,"states":[],"category":"Application","slow":false,"name":"skeleton","defaultAnchor":"main"}
+	}
+}

@@ -23,6 +23,11 @@
 			"menu.scss": {
 				"url": "components/menu.scss"
 			}
+		},
+		"templates": {
+			"skeleton-menu-left.npt": {
+				"url": "templates/skeleton-menu-left.npt"
+			}
 		}
 	}
 }
