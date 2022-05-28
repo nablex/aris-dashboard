@@ -19,6 +19,9 @@
 			}, 
 			"cards.scss": {
 				"url": "components/cards.scss"
+			}, 
+			"menu.scss": {
+				"url": "components/menu.scss"
 			}
 		}
 	}

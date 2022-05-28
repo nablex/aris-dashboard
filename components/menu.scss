@@ -1,0 +1,82 @@
+// 25BE - arrow
+// 02C5 - chevron-esque
+$menu-sidebar-icon-open: "\229F";
+// 25B8 - arrow
+// 003E - chevron-esque
+$menu-sidebar-icon-closed: "\229E";
+@mixin menu_variant_sidebar {
+	// TODO: sidebar on the left
+	min-width: 300px;
+	max-width: 400px;
+	background-color: $color-neutral-darkest;
+	flex-direction: column;
+	height: 100vh;
+	@include component_spacing_vertical_xsmall;
+	.is-button {
+		position: relative;
+		@include content_variant_ghost-light;
+		@include button_variant_ghost-light;
+		@include content_size_small;
+		color: $color-neutral-light;
+		border-radius: 0px;
+		border-left-width: 5px;
+		border-left-color: transparent;
+		.is-icon {
+			color: $color-neutral-dark;
+			font-size: $font-size-small;
+		}
+		&.is-active {
+			color: $color-neutral-lightest;
+			background-color: $color-neutral-darker;
+			border-left-color: $color-primary-light;
+			.is-icon {
+				color: $color-neutral-light;
+			}
+			&:after {
+				content: "";
+				position: absolute;
+				border-style: solid;
+				border-width: 10px;
+				border-color: transparent $color-body transparent transparent;
+				right: 0;
+			}
+		}
+	}
+	// direct spans are considered titles
+	> .is-column {
+		> span {
+			@include component_spacing_medium;
+			color: $color-neutral-base;
+			text-transform: uppercase;
+			font-size: $font-size-small;
+		}
+	}
+	.is-row {
+		flex-direction: column;
+		margin: 0;
+		padding: 0;
+	}
+	.is-column.has-children {
+		cursor: pointer;
+		&.is-open {
+			> :first-child:after {
+				content: $menu-sidebar-icon-open;
+				position: absolute;
+				right: $spacing-scale-medium;
+				color: $color-primary-light;
+			}
+		}
+		&:not(.is-open) {
+			> :first-child:after {
+				content: $menu-sidebar-icon-closed;
+				position: absolute;
+				right: $spacing-scale-medium;
+				color: $color-secondary-light;
+			}
+		}
+	}
+}
+
+@mixin menu-variant-floating {
+	// TODO: a floating menu like in a wiki article
+}
