@@ -27,6 +27,9 @@
 		"templates": {
 			"skeleton-menu-left.npt": {
 				"url": "templates/skeleton-menu-left.npt"
+			},
+			"skeleton-menu-top-left.npt": {
+				"url": "templates/skeleton-menu-top-left.npt"
 			}
 		}
 	}

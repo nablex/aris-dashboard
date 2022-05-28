@@ -77,6 +77,15 @@ $menu-sidebar-icon-closed: "\229E";
 	}
 }
 
+@mixin menu-sidebar_modifier_lighter {
+	background-color: $color-neutral-darker;
+	.is-button {
+		&.is-active {
+			background-color: $color-neutral-dark;
+		}
+	}
+}
+
 @mixin menu-variant-floating {
 	// TODO: a floating menu like in a wiki article
 }

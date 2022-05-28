@@ -1,6 +1,6 @@
 { 
 	"category": "Skeletons",
-	"name": "Menu Left",
+	"name": "Menu left",
 	"description": "With a menu on the left",
 	"icon": "images/events/events-large.png",
 	"content": {
