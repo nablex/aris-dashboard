@@ -8,6 +8,12 @@ $menu-sidebar-icon-closed: "\229E";
 	// TODO: sidebar on the left
 	min-width: 300px;
 	max-width: 400px;
+	// full screen on mobile devices
+	@media screen and (max-width: map-get($breakpoints, "below-tablet")) {
+		width: 100vw;
+		max-width: 100vw;
+		min-width: 100vw;
+	}
 	background-color: $color-neutral-darkest;
 	flex-direction: column;
 	height: 100vh;
@@ -41,6 +47,10 @@ $menu-sidebar-icon-closed: "\229E";
 				border-color: transparent $color-body transparent transparent;
 				right: 0;
 			}
+		}
+		// no border if you are floating
+		&.is-position-right {
+			border-left-width: 0px;
 		}
 	}
 	// direct spans are considered titles
