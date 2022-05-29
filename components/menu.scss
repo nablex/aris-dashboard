@@ -17,6 +17,7 @@ $menu-sidebar-icon-closed: "\229E";
 		@include content_variant_ghost-light;
 		@include button_variant_ghost-light;
 		@include content_size_small;
+		text-align: left;
 		color: $color-neutral-light;
 		border-radius: 0px;
 		border-left-width: 5px;
@@ -73,6 +74,79 @@ $menu-sidebar-icon-closed: "\229E";
 				right: $spacing-scale-medium;
 				color: $color-secondary-light;
 			}
+		}
+	}
+}
+@mixin menu-sidebar_modifier_small {
+	> .is-column {
+		> span {
+			@include component_spacing_small;
+		}
+	}
+	min-width: 48px;
+	max-width: 48px;
+	width: 48px;
+	.is-title .is-text {
+		display: none;
+	}
+	.is-label {
+		&:after {
+			display: none;
+		}
+		.is-text {
+			font-size: 0;
+			// needs to be an inline block to do the first letter trick
+			display: inline-block;
+			&:first-letter {
+				font-size: $font-size-medium !important;
+				text-transform: uppercase;
+			}
+			background-color: $color-primary-base;
+			color: $color-primary-lightest;
+			border-radius: $font-size-small;
+			padding: $spacing-scale-xsmall $spacing-scale-small;
+		}
+	}
+	.is-button {
+		@include content_size_small;
+		padding: 4px;
+		line-height: unset;
+		display: inline-block;
+		// we assume there is no icon
+		.is-text:first-child {
+			font-size: 0;
+			display: inline-block;
+			&:first-letter {
+				font-size: $font-size-large;
+				text-transform: uppercase;
+			}
+			background-color: $color-secondary-base;
+			color: $color-secondary-lightest;
+			border-radius: $font-size-small;
+			padding: $spacing-scale-xsmall $spacing-scale-small;
+			height: calc(#{$font-size-large} + #{$spacing-scale-small});
+			width: calc(#{$font-size-large} + #{$spacing-scale-small});
+			line-height: $font-size-large;
+			text-align: center;
+		}
+		.is-icon {
+			background-color: $color-secondary-base;
+			color: $color-secondary-lightest;
+			border-radius: $font-size-small;
+			padding: $spacing-scale-xsmall $spacing-scale-small;
+			font-size: $font-size-xsmall;
+			height: calc(#{$font-size-large} + #{$spacing-scale-small});
+			width: calc(#{$font-size-large} + #{$spacing-scale-small});
+			line-height: $font-size-large;
+			text-align: center;
+		}
+		// we assume there's an icon!
+		.is-text:not(:first-child) {
+			display: none;
+		}
+		&.is-active:after {
+			top: calc((#{$font-size-large} + #{$spacing-scale-small}) / 2 - 2px);
+			border-width: 6px;
 		}
 	}
 }
