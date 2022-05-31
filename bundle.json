@@ -8,7 +8,7 @@
 		},
 		"aris-core.json": {
 			"type": "bundle",
-			"url": "file:/home/alex/files/workspaces/javascript/aris-core/bundle.json"
+			"url": "https://raw.githubusercontent.com/nablex/aris-core/master/bundle.json"
 		},
 		"components": {
 			"form.scss": {
