@@ -53,6 +53,12 @@ $menu-sidebar-icon-closed: "\229E";
 			border-left-width: 0px;
 		}
 	}
+	// you can also set the right positioning on the wrapper
+	.is-position-right {
+		.is-button {
+			border-left-width: 0px;
+		}
+	}
 	// direct spans are considered titles
 	> .is-column {
 		> span {
@@ -86,11 +92,14 @@ $menu-sidebar-icon-closed: "\229E";
 			}
 		}
 	}
+	.is-mobile-menu {
+		display: none;
+	}
 }
 @mixin menu-sidebar_modifier_small {
 	> .is-column {
 		> span {
-			@include component_spacing_small;
+			padding: 4px;
 		}
 	}
 	min-width: 48px;
@@ -99,25 +108,25 @@ $menu-sidebar-icon-closed: "\229E";
 	.is-title .is-text {
 		display: none;
 	}
-	.is-label {
-		&:after {
-			display: none;
-		}
-		.is-text {
-			font-size: 0;
-			// needs to be an inline block to do the first letter trick
-			display: inline-block;
-			&:first-letter {
-				font-size: $font-size-medium !important;
-				text-transform: uppercase;
-			}
-			background-color: $color-primary-base;
-			color: $color-primary-lightest;
-			border-radius: $font-size-small;
-			padding: $spacing-scale-xsmall $spacing-scale-small;
+	.is-column {
+		// unset any positioning margin
+		margin-left: 0;
+	}
+	.is-position-right {
+		.is-button {
+			// make sure _all_ buttons have the border in this layout, even position right ones
+			border-left-width: 5px;
+			margin-left: 0;
 		}
 	}
 	.is-button {
+		&.is-position-right {
+			// make sure _all_ buttons have the border in this layout, even position right ones
+			border-left-width: 5px;
+			margin-left: 0;
+		}
+		// unset any positioning margin
+		margin-left: 0;
 		@include content_size_small;
 		padding: 4px;
 		line-height: unset;
@@ -127,7 +136,7 @@ $menu-sidebar-icon-closed: "\229E";
 			font-size: 0;
 			display: inline-block;
 			&:first-letter {
-				font-size: $font-size-large;
+				font-size: $font-size-medium;
 				text-transform: uppercase;
 			}
 			background-color: $color-secondary-base;
@@ -158,6 +167,20 @@ $menu-sidebar-icon-closed: "\229E";
 			top: calc((#{$font-size-large} + #{$spacing-scale-small}) / 2 - 2px);
 			border-width: 6px;
 		}
+		// if it is also a label, give it a different color
+		&.is-label {
+			&:after {
+				display: none;
+			}
+			.is-text {
+				background-color: $color-primary-base;
+				color: $color-primary-lightest;
+				border-radius: $font-size-small;
+			}
+		}
+	}
+	.is-mobile-menu {
+		display: block;
 	}
 }
 

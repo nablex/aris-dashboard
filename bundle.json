@@ -10,9 +10,6 @@
 			"type": "bundle",
 			"url": "file:/home/alex/files/workspaces/javascript/aris-core/bundle.json"
 		},
-		"include-media.scss": {
-			"url": "https://raw.githubusercontent.com/eduardoboucas/include-media/master/dist/_include-media.scss"
-		},
 		"components": {
 			"form.scss": {
 				"url": "components/form.scss"
