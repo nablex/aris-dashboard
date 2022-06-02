@@ -21,6 +21,11 @@
 				"url": "components/menu.scss"
 			}
 		},
+		"patterns:" :{
+			"table.scss": {
+				"url": "patterns/table.scss"
+			}
+		},
 		"templates": {
 			"skeleton-menu-left.npt": {
 				"url": "templates/skeleton-menu-left.npt"
