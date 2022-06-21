@@ -1,5 +1,5 @@
 @mixin column_variant_card {
-	@include component_border_shadow;
+	@include component_shadow_xsmall;
 	@include component_spacing_large;
 	@include component_color_background;
 }
