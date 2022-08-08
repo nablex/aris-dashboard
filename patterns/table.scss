@@ -5,7 +5,7 @@
 @mixin table_variant_default {
 	font-size: $font-size-small;
 	thead {
-		th {
+		th, td {
 			padding: $spacing-scale-small $spacing-scale-medium;
 			font-weight: normal;
 			border: solid 1px $color-neutral-light;
