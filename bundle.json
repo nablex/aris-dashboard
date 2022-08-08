@@ -21,7 +21,7 @@
 				"url": "components/menu.scss"
 			}
 		},
-		"patterns:" :{
+		"patterns" :{
 			"table.scss": {
 				"url": "patterns/table.scss"
 			}
