@@ -1,9 +1,11 @@
 // @component data component
 // @component table data
-// @component table-cell content
+// @component table-column content
 
 @mixin table_variant_default {
 	font-size: $font-size-small;
+	border-spacing: 0;
+    border-collapse: collapse;
 	thead {
 		th, td {
 			padding: $spacing-scale-small $spacing-scale-medium;
@@ -37,19 +39,25 @@
 		// some components (e.g. checkboxes) take up slightly more space than for example plain text
 		// we want to avoid variable-height rows as much as possible
 		height: calc(#{$font-size-large} * 2);
+		&.is-border-none {
+			border-bottom: none;
+			border-top: none;
+			border-right: none;
+		}
+		// th is autoaligned as center in some browsers
+		text-align: left;
 	}
-	&.is-selectable {
-		tbody {
-			tr {
-				cursor: pointer;
-				&:hover:not(.is-selected) {
-					background-color: $color-secondary-lightest;
-					color: $color-secondary-darkest;
-				}
-				&.is-selected {
-					background-color: $color-primary-lightest;
-						color: $color-primary-darkest;
-				}
+	// class can be set at either level
+	tbody.is-selectable {
+		tr {
+			cursor: pointer;
+			&:hover:not(.is-selected) {
+				background-color: $color-secondary-lightest;
+				color: $color-secondary-darkest;
+			}
+			&.is-selected {
+				background-color: $color-primary-lightest;
+				color: $color-primary-darkest;
 			}
 		}
 	}
@@ -70,12 +78,12 @@
 	@include padded-content_size_xsmall;
 	@include content_size_xsmall;
 }
-@mixin table-cell_variant_data-table-header {
+@mixin table-column_variant_data-table-header {
 	@include content_align_left;
 	@include content_size_xsmall;
 	@include content_decoration_upper;
 }
-@mixin table-cell_variant_data-table-cell {
+@mixin table-column_variant_data-table-cell {
 	@include content_size_xsmall;
 }
 
@@ -87,4 +95,12 @@
  
 @mixin menu_variant_table-button-container {
 	@include menu_variant_toolbar;
+}
+
+@mixin table-column_variant_default {
+	// nothing to see here...
+}
+// we want as small as possible
+@mixin table-column-default_modifier_small {
+	width: 0px;
 }
