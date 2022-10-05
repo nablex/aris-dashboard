@@ -72,26 +72,37 @@
 	tbody {
 		display: flex;
 		flex-direction: column;
+		row-gap: $spacing-scale-medium;
 		tr {
 			display: flex;
 			flex-direction: row;
 			flex-wrap: wrap;
+			border: solid 1px $color-neutral-light;
+			border-style: solid none none solid;
 			td {
 				height: auto;
-				display: block;
 				width: 100%;
 				&[label]:before {
 					content: attr(label);
 					font-weight: bold;
 					text-transform: uppercase;
-					font-size: $font-size-small;
+					font-size: $font-size-xsmall;
 					display: block;
 					margin-bottom: $spacing-scale-small;
+				}
+				// we _do_ want a border in this case!
+				&.is-border-none {
+					border-width: 1px;
+					border-style: none solid solid none;
+					border-color: $color-neutral-light;
+					display: flex;
+					justify-content: end;
 				}
 			}
 		}
 	}
 }
+
 @mixin table-default_modifier_pattern-alternating {
 	tbody {
 		@include layout_pattern_basic-alternating;
