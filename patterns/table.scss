@@ -1,6 +1,6 @@
 // @component data component
 // @component table data
-// @component table-column content
+// @component table-column column
 
 @mixin table_variant_default {
 	font-size: $font-size-small;
@@ -47,17 +47,47 @@
 		// th is autoaligned as center in some browsers
 		text-align: left;
 	}
-	// class can be set at either level
-	tbody.is-selectable {
-		tr {
-			cursor: pointer;
-			&:hover:not(.is-selected) {
+	tr.is-selectable {
+		cursor: pointer;
+		&:hover:not(.is-selected) {
+			td:not(.is-border-none) {
 				background-color: $color-secondary-lightest;
 				color: $color-secondary-darkest;
 			}
-			&.is-selected {
+		}
+		&.is-selected {
+			td:not(.is-border-none) {
 				background-color: $color-primary-lightest;
 				color: $color-primary-darkest;
+			}
+		}
+	}
+}
+@mixin table-default_modifier_mobile {
+	display: flex;
+	flex-direction: column;
+	thead {
+		display: none;
+	}
+	tbody {
+		display: flex;
+		flex-direction: column;
+		tr {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			td {
+				height: auto;
+				display: block;
+				width: 100%;
+				&[label]:before {
+					content: attr(label);
+					font-weight: bold;
+					text-transform: uppercase;
+					font-size: $font-size-small;
+					display: block;
+					margin-bottom: $spacing-scale-small;
+				}
 			}
 		}
 	}

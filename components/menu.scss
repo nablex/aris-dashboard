@@ -16,38 +16,11 @@ $menu-sidebar-icon-closed: "\229E";
 	}
 	background-color: $color-neutral-darkest;
 	flex-direction: column;
-	height: 100vh;
+	min-height: 100vh;
+	overflow: auto;
 	@include component_spacing_vertical_xsmall;
 	.is-button {
 		position: relative;
-		@include content_variant_ghost-light;
-		@include button_variant_ghost-light;
-		@include content_size_small;
-		text-align: left;
-		color: $color-neutral-light;
-		border-radius: 0px;
-		border-left-width: 5px;
-		border-left-color: transparent;
-		.is-icon {
-			color: $color-neutral-dark;
-			font-size: $font-size-small;
-		}
-		&.is-active {
-			color: $color-neutral-lightest;
-			background-color: $color-neutral-darker;
-			border-left-color: $color-primary-light;
-			.is-icon {
-				color: $color-neutral-light;
-			}
-			&:after {
-				content: "";
-				position: absolute;
-				border-style: solid;
-				border-width: 10px;
-				border-color: transparent $color-body transparent transparent;
-				right: 0;
-			}
-		}
 		// no border if you are floating
 		&.is-position-right {
 			border-left-width: 0px;
@@ -57,15 +30,6 @@ $menu-sidebar-icon-closed: "\229E";
 	.is-position-right {
 		.is-button {
 			border-left-width: 0px;
-		}
-	}
-	// direct spans are considered titles
-	> .is-column {
-		> span {
-			@include component_spacing_medium;
-			color: $color-neutral-base;
-			text-transform: uppercase;
-			font-size: $font-size-small;
 		}
 	}
 	.is-row {
@@ -105,7 +69,13 @@ $menu-sidebar-icon-closed: "\229E";
 	min-width: 48px;
 	max-width: 48px;
 	width: 48px;
-	.is-title .is-text {
+	// simply unset all the locational padding, also in static titles etc
+	.is-page-row, .is-page-cell, .is-typography {
+		padding-left: 0;
+		padding-right: 0;
+		justify-content: center;
+	}
+	.is-typography .is-text {
 		display: none;
 	}
 	.is-column {
@@ -126,11 +96,13 @@ $menu-sidebar-icon-closed: "\229E";
 			margin-left: 0;
 		}
 		// unset any positioning margin
-		margin-left: 0;
+		// leave a little bit of space
+		margin-left: $spacing-scale-xxsmall;
+		margin-right: $spacing-scale-xxsmall;
 		@include content_size_small;
 		padding: 4px;
 		line-height: unset;
-		display: inline-block;
+		justify-content: center;
 		// we assume there is no icon
 		.is-text:first-child {
 			font-size: 0;
@@ -143,17 +115,6 @@ $menu-sidebar-icon-closed: "\229E";
 			color: $color-secondary-lightest;
 			border-radius: $font-size-small;
 			padding: $spacing-scale-xsmall $spacing-scale-small;
-			height: calc(#{$font-size-large} + #{$spacing-scale-small});
-			width: calc(#{$font-size-large} + #{$spacing-scale-small});
-			line-height: $font-size-large;
-			text-align: center;
-		}
-		.is-icon {
-			background-color: $color-secondary-base;
-			color: $color-secondary-lightest;
-			border-radius: $font-size-small;
-			padding: $spacing-scale-xsmall $spacing-scale-small;
-			font-size: $font-size-xsmall;
 			height: calc(#{$font-size-large} + #{$spacing-scale-small});
 			width: calc(#{$font-size-large} + #{$spacing-scale-small});
 			line-height: $font-size-large;
@@ -180,7 +141,22 @@ $menu-sidebar-icon-closed: "\229E";
 		}
 	}
 	.is-mobile-menu {
-		display: block;
+		display: flex;
+	}
+	:not(.is-mobile-menu) {
+		.is-button {
+			.is-icon {
+				background-color: $color-secondary-base;
+				color: $color-secondary-lightest;
+				border-radius: $font-size-small;
+				padding: $spacing-scale-xsmall $spacing-scale-small;
+				font-size: $font-size-xsmall;
+				height: calc(#{$font-size-large} + #{$spacing-scale-small});
+				width: calc(#{$font-size-large} + #{$spacing-scale-small});
+				line-height: $font-size-large;
+				text-align: center;
+			}
+		}
 	}
 }
 
