@@ -79,6 +79,12 @@
 			flex-wrap: wrap;
 			border: solid 1px $color-neutral-light;
 			border-style: solid none none solid;
+			// reintroduce the border we throw away in normal view
+			&:last-child {
+				td {
+					border-bottom: solid 1px $color-neutral-light;
+				}
+			}
 			td {
 				height: auto;
 				width: 100%;
@@ -97,6 +103,13 @@
 					border-color: $color-neutral-light;
 					display: flex;
 					justify-content: end;
+				}
+				// reintroduce border that we throw away in normal view
+				&:last-child {
+					border-right: solid 1px $color-neutral-light;
+				}
+				&.is-empty {
+					display: none;
 				}
 			}
 		}
