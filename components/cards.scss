@@ -7,10 +7,16 @@
 // in some cases however, you might want to render a page within the content of a cell (or e.g. a table with detail view) and at that point you don't want the card container styling
 @mixin row_variant_cards {
 	@include component_spacing_medium;
+	@media only screen and (max-width: map-get($breakpoints, "below-tablet")) {
+		@include component_spacing_small;
+	}
 }
 
 @mixin column_variant_card {
 	@include component_shadow_xsmall;
 	@include component_spacing_large;
 	@include component_color_background;
+	@media only screen and (max-width: map-get($breakpoints, "below-tablet")) {
+		@include component_spacing_small;
+	}
 }
