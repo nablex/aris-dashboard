@@ -16,7 +16,7 @@ $menu-sidebar-icon-closed: "\229E";
 	}
 	background-color: $color-neutral-darkest;
 	flex-direction: column;
-	min-height: 100vh;
+	min-height: 100%;
 	overflow: auto;
 	@include component_spacing_vertical_xsmall;
 	.is-button {
