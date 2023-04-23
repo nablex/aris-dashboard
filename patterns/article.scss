@@ -1,0 +1,34 @@
+// @component article column
+@mixin article_variant_default {
+	@include column_variant_default;
+	@include component_spacing_gap-medium;
+}
+
+// @component code content
+@mixin code_variant_article {
+	@include component_spacing_vertical-medium;
+	@include component_spacing_horizontal-large;
+	display: block;
+	background-color: $color-neutral-lighter;
+	font-size: $font-size-small;
+	font-family: Monospace;
+	.is-code-method {
+		color: $color-secondary-dark;
+	}
+	// override string coloring in comments
+	.is-code-comment, .is-code-comment .is-code-string {
+		color: $color-success-base;
+	}
+	.is-code-string {
+		color: $color-warning-dark;
+	}
+	.is-code-keyword {
+		color: $color-danger-base;
+		font-weight: bold;
+	}
+}
+
+// @component quote content
+@mixin quote_variant_article {
+	
+}

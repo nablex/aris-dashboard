@@ -24,6 +24,9 @@
 		"patterns" :{
 			"table.scss": {
 				"url": "patterns/table.scss"
+			},
+			"article.scss": {
+				"url": "patterns/article.scss"
 			}
 		},
 		"templates": {
