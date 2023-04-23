@@ -28,6 +28,13 @@
 	}
 }
 
+@mixin column_variant_article {
+	@include component_spacing_gap-medium;
+}
+@mixin row_variant_article {
+	@include component_spacing_gap-medium;
+}
+
 // @component quote content
 @mixin quote_variant_article {
 	
