@@ -8,6 +8,7 @@
 @mixin code_variant_article {
 	@include component_spacing_vertical-medium;
 	@include component_spacing_horizontal-large;
+	width: 100%;
 	display: block;
 	background-color: $color-neutral-lighter;
 	font-size: $font-size-small;
