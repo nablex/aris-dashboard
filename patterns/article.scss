@@ -11,10 +11,12 @@
 	width: 100%;
 	display: block;
 	background-color: $color-neutral-lighter;
-	font-size: $font-size-small;
 	font-family: Monospace;
 	.is-code-method {
 		color: $color-secondary-dark;
+	}
+	.is-code-variable {
+		color: $color-primary-dark;
 	}
 	// override string coloring in comments
 	.is-code-comment, .is-code-comment .is-code-string {
@@ -25,8 +27,16 @@
 	}
 	.is-code-keyword {
 		color: $color-danger-base;
-		font-weight: bold;
 	}
+}
+
+@mixin code_variant_inline {
+	display: inline-block;
+	background-color: $color-neutral-lighter;
+	font-family: Monospace;
+	font-weight: bold;
+	padding-left: $spacing-scale-xsmall;
+	padding-right: $spacing-scale-xsmall;
 }
 
 @mixin column_variant_article {
@@ -39,4 +49,8 @@
 // @component quote content
 @mixin quote_variant_article {
 	
+}
+
+@mixin p_variant_article {
+	display: block;
 }
