@@ -2,6 +2,10 @@
 @mixin article_variant_default {
 	@include column_variant_default;
 	@include component_spacing_gap-medium;
+
+
+	// header counter
+	counter-reset: chapter1;
 }
 
 // @component code content
@@ -12,6 +16,7 @@
 	display: block;
 	background-color: $color-neutral-lighter;
 	font-family: Monospace;
+	white-space: pre;
 	.is-code-method {
 		color: $color-secondary-dark;
 	}
@@ -28,6 +33,42 @@
 	.is-code-keyword {
 		color: $color-danger-base;
 	}
+}
+
+@mixin h1_variant_article {
+	font-weight: bold;
+	counter-reset: chapter2;
+
+	&:before {
+		content: counter(chapter1) ".";
+		counter-increment: chapter1;
+		margin-right: $spacing-scale-medium;
+	}
+}
+@mixin h2_variant_article {
+	font-weight: bold;
+	counter-reset: chapter3;
+	&:before {
+		content: counter(chapter1) "." counter(chapter2);
+		counter-increment: chapter2;
+		margin-right: $spacing-scale-medium;
+	}
+}
+@mixin h3_variant_article {
+	counter-reset: chapter4;
+	&:before {
+		content: counter(chapter1) "." counter(chapter2) "." counter(chapter3);
+		counter-increment: chapter3;
+		margin-right: $spacing-scale-medium;
+	}
+}
+@mixin h4_variant_article {
+	counter-reset: chapter5;
+}
+@mixin h5_variant_article {
+	counter-reset: chapter6;
+}
+@mixin h6_variant_article {
 }
 
 @mixin code_variant_inline {
@@ -54,3 +95,8 @@
 @mixin p_variant_article {
 	display: block;
 }
+
+
+
+
+

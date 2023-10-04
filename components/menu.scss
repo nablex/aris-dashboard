@@ -60,6 +60,11 @@ $menu-sidebar-icon-closed: "\229E";
 		display: none;
 	}
 }
+@mixin menu-sidebar_modifier_medium {
+	min-width: 250px;
+	max-width: 250px;
+	width: 250px;
+}
 @mixin menu-sidebar_modifier_small {
 	> .is-column {
 		> span {
