@@ -8,7 +8,7 @@
     border-collapse: collapse;
 	thead {
 		th, td {
-			padding: $spacing-scale-small $spacing-scale-medium;
+			padding: $spacing-small $spacing-medium;
 			font-weight: normal;
 			border: solid 1px $color-neutral-light;
 			border-style: none solid solid none;
@@ -22,7 +22,7 @@
 		td {
 			border: solid 1px $color-neutral-light;
 			border-style: none solid solid none;
-			padding: $spacing-scale-small $spacing-scale-medium;
+			padding: $spacing-small $spacing-medium;
 			&:last-child {
 				border-right: none;
 			}
@@ -72,7 +72,7 @@
 	tbody {
 		display: flex;
 		flex-direction: column;
-		row-gap: $spacing-scale-medium;
+		row-gap: $spacing-medium;
 		tr {
 			display: flex;
 			flex-direction: row;
@@ -94,7 +94,7 @@
 					text-transform: uppercase;
 					font-size: $font-size-xsmall;
 					display: block;
-					margin-bottom: $spacing-scale-small;
+					margin-bottom: $spacing-small;
 				}
 				// we _do_ want a border in this case!
 				&.is-border-none {

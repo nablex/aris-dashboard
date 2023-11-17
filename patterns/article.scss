@@ -42,7 +42,7 @@
 	&:before {
 		content: counter(chapter1) ".";
 		counter-increment: chapter1;
-		margin-right: $spacing-scale-medium;
+		margin-right: $spacing-medium;
 	}
 }
 @mixin h2_variant_article {
@@ -51,7 +51,7 @@
 	&:before {
 		content: counter(chapter1) "." counter(chapter2);
 		counter-increment: chapter2;
-		margin-right: $spacing-scale-medium;
+		margin-right: $spacing-medium;
 	}
 }
 @mixin h3_variant_article {
@@ -59,7 +59,7 @@
 	&:before {
 		content: counter(chapter1) "." counter(chapter2) "." counter(chapter3);
 		counter-increment: chapter3;
-		margin-right: $spacing-scale-medium;
+		margin-right: $spacing-medium;
 	}
 }
 @mixin h4_variant_article {
@@ -76,8 +76,8 @@
 	background-color: $color-neutral-lighter;
 	font-family: Monospace;
 	font-weight: bold;
-	padding-left: $spacing-scale-xsmall;
-	padding-right: $spacing-scale-xsmall;
+	padding-left: $spacing-xsmall;
+	padding-right: $spacing-xsmall;
 }
 
 @mixin column_variant_article {

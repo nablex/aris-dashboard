@@ -43,7 +43,7 @@ $menu-sidebar-icon-closed: "\229E";
 			> :first-child:after {
 				content: $menu-sidebar-icon-open;
 				position: absolute;
-				right: $spacing-scale-medium;
+				right: $spacing-medium;
 				color: $color-primary-light;
 			}
 		}
@@ -51,7 +51,7 @@ $menu-sidebar-icon-closed: "\229E";
 			> :first-child:after {
 				content: $menu-sidebar-icon-closed;
 				position: absolute;
-				right: $spacing-scale-medium;
+				right: $spacing-medium;
 				color: $color-secondary-light;
 			}
 		}
@@ -102,8 +102,8 @@ $menu-sidebar-icon-closed: "\229E";
 		}
 		// unset any positioning margin
 		// leave a little bit of space
-		margin-left: $spacing-scale-xxsmall;
-		margin-right: $spacing-scale-xxsmall;
+		margin-left: $spacing-xxsmall;
+		margin-right: $spacing-xxsmall;
 		@include content_size_small;
 		padding: 4px;
 		line-height: unset;
@@ -119,9 +119,9 @@ $menu-sidebar-icon-closed: "\229E";
 			background-color: $color-secondary-base;
 			color: $color-secondary-lightest;
 			border-radius: $font-size-small;
-			padding: $spacing-scale-xsmall $spacing-scale-small;
-			height: calc(#{$font-size-large} + #{$spacing-scale-small});
-			width: calc(#{$font-size-large} + #{$spacing-scale-small});
+			padding: $spacing-xsmall $spacing-small;
+			height: calc(#{$font-size-large} + #{$spacing-small});
+			width: calc(#{$font-size-large} + #{$spacing-small});
 			line-height: $font-size-large;
 			text-align: center;
 		}
@@ -130,7 +130,7 @@ $menu-sidebar-icon-closed: "\229E";
 			display: none;
 		}
 		&.is-active:after {
-			top: calc((#{$font-size-large} + #{$spacing-scale-small}) / 2 - 2px);
+			top: calc((#{$font-size-large} + #{$spacing-small}) / 2 - 2px);
 			border-width: 6px;
 		}
 		// if it is also a label, give it a different color
@@ -158,10 +158,10 @@ $menu-sidebar-icon-closed: "\229E";
 				background-color: $color-secondary-base;
 				color: $color-secondary-lightest;
 				border-radius: $font-size-small;
-				padding: $spacing-scale-xsmall $spacing-scale-small;
+				padding: $spacing-xsmall $spacing-small;
 				font-size: $font-size-xsmall;
-				height: calc(#{$font-size-large} + #{$spacing-scale-small});
-				width: calc(#{$font-size-large} + #{$spacing-scale-small});
+				height: calc(#{$font-size-large} + #{$spacing-small});
+				width: calc(#{$font-size-large} + #{$spacing-small});
 				line-height: $font-size-large;
 				text-align: center;
 			}
