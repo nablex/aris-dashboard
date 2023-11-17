@@ -102,8 +102,8 @@ $menu-sidebar-icon-closed: "\229E";
 		}
 		// unset any positioning margin
 		// leave a little bit of space
-		margin-left: $spacing-xxsmall;
-		margin-right: $spacing-xxsmall;
+		margin-left: $spacing-2xsmall;
+		margin-right: $spacing-2xsmall;
 		@include content_size_small;
 		padding: 4px;
 		line-height: unset;
