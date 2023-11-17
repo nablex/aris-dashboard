@@ -144,6 +144,10 @@ $menu-sidebar-icon-closed: "\229E";
 				border-radius: $font-size-small;
 			}
 		}
+		// hide any badges
+		.is-badge {
+			display: none;
+		}
 	}
 	.is-mobile-menu {
 		display: flex;
