@@ -12,6 +12,12 @@
 	}
 }
 
+@mixin row_variant_cards-vertical {
+	@include row_variant_cards;
+	align-items: stretch;
+}
+
+
 @mixin column_variant_card {
 	@include component_shadow_xsmall;
 	@include component_spacing_large;
@@ -19,4 +25,18 @@
 	@media only screen and (max-width: map-get($breakpoints, "below-tablet")) {
 		@include component_spacing_small;
 	}
+}
+
+@mixin layout_variant_card-header {
+	align-items: center;
+	justify-content: space-between;
+}
+
+@mixin layout_variant_card-content {
+	flex-direction: column;
+}
+
+@mixin layout_variant_card-contrast {
+	background-color: $color-uses-body;
+	@include component_spacing_large;
 }

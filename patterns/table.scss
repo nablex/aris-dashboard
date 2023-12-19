@@ -163,3 +163,26 @@
 	// used to mark a column as empty, in a default scenario we don't actually apply special styling to it (currently)
 	// however, when in mobile mode, we want to hide it
 }
+
+@mixin bebat--table-default_modifier_has-local-actions {
+	td, th {
+		&:last-child {
+			border-left: none;
+			// as small as possible
+			width: 0;
+			.is-tooltip {
+				@include tooltip_position_top-reverse;
+			}
+			// center any content
+			// and don't overflow
+			.is-page-row {
+				align-items: center;
+				flex-wrap: nowrap;
+			}
+			// make sure text doesn't overflow either
+			.is-text {
+				white-space: nowrap;
+			}
+		}
+	}
+}

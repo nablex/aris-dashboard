@@ -1,183 +1,52 @@
-// 25BE - arrow
-// 02C5 - chevron-esque
-$menu-sidebar-icon-open: "\229F";
-// 25B8 - arrow
-// 003E - chevron-esque
-$menu-sidebar-icon-closed: "\229E";
+$menu-sidebar-width-medium: 300px !default;
+$menu-sidebar-width-small: 250px !default;
+$menu-sidebar-width-collapsed: 48px !default;
+
 @mixin menu_variant_sidebar {
-	// TODO: sidebar on the left
-	min-width: 300px;
-	max-width: 400px;
+	width: $menu-sidebar-width-medium;
 	// full screen on mobile devices
 	@media screen and (max-width: map-get($breakpoints, "below-tablet")) {
 		width: 100vw;
-		max-width: 100vw;
-		min-width: 100vw;
 	}
-	background-color: $color-neutral-darkest;
 	flex-direction: column;
 	min-height: 100%;
-	overflow: auto;
 	@include component_spacing_vertical_xsmall;
-	.is-button {
-		position: relative;
-		// no border if you are floating
-		&.is-position-right {
-			border-left-width: 0px;
-		}
-	}
-	// you can also set the right positioning on the wrapper
-	.is-position-right {
-		.is-button {
-			border-left-width: 0px;
-		}
-	}
-	.is-row {
+	:is-row {
 		flex-direction: column;
 		margin: 0;
 		padding: 0;
 	}
-	.is-column.has-children {
-		cursor: pointer;
-		&.is-open {
-			> :first-child:after {
-				content: $menu-sidebar-icon-open;
-				position: absolute;
-				right: $spacing-medium;
-				color: $color-primary-light;
-			}
-		}
-		&:not(.is-open) {
-			> :first-child:after {
-				content: $menu-sidebar-icon-closed;
-				position: absolute;
-				right: $spacing-medium;
-				color: $color-secondary-light;
-			}
-		}
-	}
-	.is-mobile-menu {
-		display: none;
-	}
 }
-@mixin menu-sidebar_modifier_medium {
-	min-width: 250px;
-	max-width: 250px;
-	width: 250px;
-}
-@mixin menu-sidebar_modifier_small {
+@mixin menu_variant_sidebar--collapsed {
 	> .is-column {
 		> span {
 			padding: 4px;
 		}
 	}
-	min-width: 48px;
-	max-width: 48px;
-	width: 48px;
+	width: $menu-sidebar-width-collapsed;
 	// simply unset all the locational padding, also in static titles etc
-	.is-page-row, .is-page-cell, .is-typography {
+	:is-row, :is-cell, :is-typography {
 		padding-left: 0;
 		padding-right: 0;
 		justify-content: center;
 	}
-	.is-typography .is-text {
-		display: none;
-	}
-	.is-column {
-		// unset any positioning margin
-		margin-left: 0;
-	}
-	.is-position-right {
-		.is-button {
-			// make sure _all_ buttons have the border in this layout, even position right ones
-			border-left-width: 5px;
-			margin-left: 0;
-		}
-	}
-	.is-button {
-		&.is-position-right {
-			// make sure _all_ buttons have the border in this layout, even position right ones
-			border-left-width: 5px;
-			margin-left: 0;
-		}
-		// unset any positioning margin
-		// leave a little bit of space
-		margin-left: $spacing-2xsmall;
-		margin-right: $spacing-2xsmall;
-		@include content_size_small;
-		padding: 4px;
-		line-height: unset;
-		justify-content: center;
-		// we assume there is no icon
-		.is-text:first-child {
-			font-size: 0;
-			display: inline-block;
-			&:first-letter {
-				font-size: $font-size-medium;
-				text-transform: uppercase;
-			}
-			background-color: $color-secondary-base;
-			color: $color-secondary-lightest;
-			border-radius: $font-size-small;
-			padding: $spacing-xsmall $spacing-small;
-			height: calc(#{$font-size-large} + #{$spacing-small});
-			width: calc(#{$font-size-large} + #{$spacing-small});
-			line-height: $font-size-large;
-			text-align: center;
-		}
-		// we assume there's an icon!
-		.is-text:not(:first-child) {
+	:is-typography {
+		// any typography without icon is simply hidden
+		&:not(.has-icon) {
 			display: none;
 		}
-		&.is-active:after {
-			top: calc((#{$font-size-large} + #{$spacing-small}) / 2 - 2px);
-			border-width: 6px;
-		}
-		// if it is also a label, give it a different color
-		&.is-label {
-			&:after {
+		// if we have an icon and text, hide the text
+		&.has-icon.has-text {
+			.is-text {
 				display: none;
 			}
-			.is-text {
-				background-color: $color-primary-base;
-				color: $color-primary-lightest;
-				border-radius: $font-size-small;
-			}
-		}
-		// hide any badges
-		.is-badge {
-			display: none;
-		}
-	}
-	.is-mobile-menu {
-		display: flex;
-	}
-	:not(.is-mobile-menu) {
-		.is-button {
-			.is-icon {
-				background-color: $color-secondary-base;
-				color: $color-secondary-lightest;
-				border-radius: $font-size-small;
-				padding: $spacing-xsmall $spacing-small;
-				font-size: $font-size-xsmall;
-				height: calc(#{$font-size-large} + #{$spacing-small});
-				width: calc(#{$font-size-large} + #{$spacing-small});
-				line-height: $font-size-large;
-				text-align: center;
-			}
 		}
 	}
 }
 
-@mixin menu-sidebar_modifier_lighter {
-	background-color: $color-neutral-darker;
-	.is-button {
-		&.is-active {
-			background-color: $color-neutral-dark;
-		}
-	}
+@mixin menu-sidebar_modifier_small {
+	width: $menu-sidebar-width-small;
 }
-
-@mixin menu-variant-floating {
-	// TODO: a floating menu like in a wiki article
+@mixin menu-sidebar_modifier_small--collapsed {
+	width: $menu-sidebar-width-collapsed;
 }
