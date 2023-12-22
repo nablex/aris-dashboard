@@ -164,8 +164,8 @@
 	// however, when in mobile mode, we want to hide it
 }
 
-@mixin bebat--table-default_modifier_has-local-actions {
-	td, th {
+@mixin table-default_modifier_has-local-actions {
+	td:not([slot]), th:not([slot]) {
 		&:last-child {
 			border-left: none;
 			// as small as possible

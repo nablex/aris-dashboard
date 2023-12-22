@@ -16,7 +16,8 @@
 	display: block;
 	background-color: $color-neutral-lighter;
 	font-family: Monospace;
-	white-space: pre;
+	font-size: 0.8rem;
+//	white-space: pre;
 	.is-code-method {
 		color: $color-secondary-dark;
 	}
