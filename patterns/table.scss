@@ -50,13 +50,13 @@
 	tr.is-selectable {
 		cursor: pointer;
 		&:hover:not(.is-selected) {
-			td:not(.is-border-none) {
+			> td:not(.is-border-none) {
 				background-color: $color-secondary-lightest;
 				color: $color-secondary-darkest;
 			}
 		}
 		&.is-selected {
-			td:not(.is-border-none) {
+			> td:not(.is-border-none) {
 				background-color: $color-primary-lightest;
 				color: $color-primary-darkest;
 			}
